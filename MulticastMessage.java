@@ -19,10 +19,10 @@ public class MulticastMessage extends TimeStampedMessage implements Serializable
 		return seqNumber;
 	}
 	
-	public void setMTimeStamp(int[] multicastTimestamp){
+	public void setMulticastTimeStamp(int[] multicastTimestamp){
 		this.multicastTimestamp = multicastTimestamp;
 	}
-	public int[] getMTimeStamp(){
+	public int[] getMulticastTimeStamp(){
 		return multicastTimestamp;
 	}
 	
@@ -32,3 +32,4 @@ public class MulticastMessage extends TimeStampedMessage implements Serializable
 	}
 
 }
+
