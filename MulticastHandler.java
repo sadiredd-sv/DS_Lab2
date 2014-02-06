@@ -1,5 +1,3 @@
-package Lab1;
-
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.*;
@@ -11,7 +9,7 @@ public class MulticastHandler extends Thread
 	private String local_name;
 	private boolean flag = true;
 
-	public DeliverWorker(MessagePasser mp, String local_name)
+	public MulticastHandler(MessagePasser mp, String local_name)
 	{
 		this.mp = mp;
 		this.local_name = local_name;
