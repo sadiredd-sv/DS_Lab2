@@ -1,0 +1,54 @@
+# Defines which nodes are used in the system and how to connect to them.
+# This element should only be referenced during the constructor's initial
+# setup.
+# All names must be unique.
+# No other nodes are known.
+# These names will be used for src and dest addresses for the Message
+# The local node’s name is included in this list
+configuration :
+  - name : alice
+    ip   : localhost
+    port : 31415
+
+  - name : bob
+    ip   : localhost
+    port : 31416
+
+  - name : charlie
+    ip   : localhost
+    port : 31417
+
+  - name : daphnie
+    ip   : localhost
+    port : 9003
+
+  - name : logger
+    ip   : localhost
+    port : 9004
+
+sendRules :
+  - action : drop
+    src    : bob
+    dest   : alice
+    kind   : Ack
+
+
+receiveRules :
+  - action : duplicate
+    src    : charlie
+    seqNum : 1000
+
+  - action : delay
+    kind   : Delay
+
+groups :
+  - name : Group1
+    members :
+      - alice
+      - bob
+      - charlie
+  - name : Group2
+    members :
+      - daphnie
+      - bob
+      - charlie
